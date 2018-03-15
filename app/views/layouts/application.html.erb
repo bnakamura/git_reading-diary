@@ -7,6 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header class="header">
+    <div class="header__bar row">
+      <h1 class="grid-6"><a href="/">ReadingDiary</a></h1>
+      <div class="user_nav grid">
+        <a class="post" href="/diaries/new">投稿する</a>
+        <a class="mypage" href="/diaries/mypage">マイページ</a>
+        <a class="login" href="/diaries/login">ログイン</a>
+      </div>
+    </div>
+  </header>
 
 <%= yield %>
 
