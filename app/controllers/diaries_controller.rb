@@ -1,6 +1,6 @@
 class DiariesController < ApplicationController
   def index
-    @diaries = Diary.all.order("created_at DESC")
+    @diaries = Diary.all.order("created_at DESC").page(params[:page]).per(5)
   end
   
   def new

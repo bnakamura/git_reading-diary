@@ -3,10 +3,12 @@
     <p>タイトル:<%= diary.title %></p>
     <p>著者名  :<%= diary.author %></p>
     <p>お薦め度:<%= diary.reco_rate %></p>
-    <p>著者名  :<%= diary.author %></p>
+    <p>読みたい:</p>
+    <p>買いたい:</p>
     <p>感想    :<%= simple_format(diary.impression) %></p>
     <p>ジャンル:</p>
     <p>投稿者  :</p>
     <p>詳細　  :</p>
   <% end %>
+  <%= paginate(@diaries) %> 
 </div>
