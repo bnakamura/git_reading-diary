@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'diaries#index'                   #日記一覧をルートパスに指定する
   get 'diaries'     => 'diaries#index'   #日記一覧画面（トップページ）
   get 'diaries/new' => 'diaries#new'     #日記投稿画面
