@@ -1,4 +1,5 @@
-<div class="contents row" >
+<div class="contents row">
+  <p><%= @nickname %>さんの読書日記一覧</p>
   <% @diaries.each do |diary| %>
     <p>タイトル:<%= diary.title %></p>
     <p>著者名  :<%= diary.author %></p>
@@ -7,8 +8,8 @@
     <p>買いたい:</p>
     <p>感想    :<%= simple_format(diary.impression) %></p>
     <p>ジャンル:</p>
-    <p>投稿者  :<%= diary.user.nickname %></p>
+    <p>投稿者  :</p>
     <p>詳細　  :</p>
   <% end %>
-  <%= paginate(@diaries) %> 
+  <% paginate(@diaries) %>
 </div>

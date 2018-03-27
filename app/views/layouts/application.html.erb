@@ -12,8 +12,9 @@
       <h1 class="grid-6"><a href="/">ReadingDiary</a></h1>
       <% if user_signed_in? %>
         <div class="user_nav grid">
+          <%= current_user.nickname %>
           <a class="post" href="/diaries/new">投稿する</a>
-          <a class="mypage" href="/diaries/mypage">マイページ</a>
+          <a class="mypage" href="/users/current_user.id">マイページ</a>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>        </div>
       <% else %>
         <div class="grid-6">
