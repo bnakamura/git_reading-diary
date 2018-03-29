@@ -9,6 +9,9 @@
     <p>ジャンル:</p>
     <p>投稿者  :<%= diary.user.nickname %></p>
     <p>詳細　  :</p>
+    <% if user_signed_in? && current_user.id == diary.user_id %>
+      <%= link_to '削除', "/diaries/#{diary.id}", method: :delete %>
+    <% end %>
   <% end %>
   <%= paginate(@diaries) %> 
 </div>
