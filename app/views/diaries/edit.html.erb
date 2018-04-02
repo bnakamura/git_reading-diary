@@ -1,0 +1,24 @@
+<div class="contents row">
+  <%= form_tag("/diaries/#{@diary.id}", method: :patch) do %>
+    <h3>
+      編集する
+    </h3>
+    <input type="text" name="title" placeholder="タイトル" value="<%= @diary.title %>"></br>
+    <input type="text" name="author" placeholder="著者名" value="<%= @diary.author %>"></br>
+    <input type="text" name="publisher" placeholder="出版社" value="<%= @diary.publisher %>"></br>
+    <input type="text" name="reco_rate" placeholder="お薦め度" value="<%= @diary.reco_rate %>"></br>
+    <input type="radio" name="public_flag" value="<%= @diary.public_flag %>">公開する
+    <input type="radio" name="public_flag" value="<%= @diary.public_flag %>">公開しない</br>
+    本の表紙画像アップロード<input type="file" name="book_image" placeholder="本の表示画像アップロード" >
+    <input type="checkbox" name="book_image_public_flag" ></br>
+    本の感想<input type="checkbox" name="impression_public_flag" value="<%= @diary.impression_public_flag %>"></br>
+    <textarea name="impression" rows="10" cols="80"><%= @diary.impression %></textarea></br>
+    本を読んで覚えておきたいことは何ですか？<input type="checkbox" name="memo_public_flag" value="<%= @diary.memo_public_flag %>"></br>
+    <textarea name="memo" rows="10" cols="80"><%= @diary.memo %></textarea></br>
+    本を読んでやろうと思うことは何ですか？<input type="checkbox" name="action_public_flag" value="<%= @diary.action_public_flag %>"></br>
+    <textarea name="action" rows="10" cols="80"><%= @diary.action %></textarea></br>
+    どんな人にお薦めしたいですか？<input type="checkbox" name="reco_for_public_flag" value="<%= @diary.reco_for_public_flag %>"></br>
+    <textarea name="reco_for" rows="10" cols="80"><%= @diary.reco_for %></textarea></br>
+    <input type="submit" value="保存する">
+  <% end %>  
+</div>

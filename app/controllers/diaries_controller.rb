@@ -20,6 +20,17 @@ class DiariesController < ApplicationController
     end
   end
   
+  def edit
+    @diary = Diary.find(params[:id])
+  end
+  
+  def update
+    diary = Diary.find(params[:id])
+    if diary.user_id == current_user.id
+      diary.update(diary_params)
+    end
+  end
+  
   private
   def diary_params
     params.permit(:title, :author, :publisher, :public_flag, :impression, :impression_public_flag, :memo, :memo_public_flag, :action, :action_public_flag, :reco_for, :reco_for_public_flag)
