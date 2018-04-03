@@ -6,6 +6,7 @@
     <input type="text" name="title" placeholder="タイトル"></br>
     <input type="text" name="author" placeholder="著者名"></br>
     <input type="text" name="publisher" placeholder="出版社"></br>
+    <%= select :genre, :genre_id, @genres.map{|t| [t.genre_name, t.id]}, :include_blank => true %></br>
     <input type="text" name="reco_rate" placeholder="お薦め度"></br>
     <input type="radio" name="public_flag">公開する
     <input type="radio" name="public_flag">公開しない</br>

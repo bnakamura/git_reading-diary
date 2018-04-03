@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180321012950) do
+ActiveRecord::Schema.define(version: 20180402055630) do
 
   create_table "diaries", force: :cascade do |t|
     t.string   "title",                  limit: 255
@@ -30,6 +30,12 @@ ActiveRecord::Schema.define(version: 20180321012950) do
     t.boolean  "action_public_flag"
     t.text     "reco_for",               limit: 65535
     t.boolean  "reco_for_public_flag"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string   "genre_name", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
