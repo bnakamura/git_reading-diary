@@ -1,6 +1,6 @@
 class DiariesController < ApplicationController
   
-  before_action :move_to_index, except: :index
+  before_action :move_to_index, except: [:index, :show]
   
   def index
     @diaries = Diary.includes([:user, :genre]).order("created_at DESC").page(params[:page]).per(5)
@@ -32,6 +32,10 @@ class DiariesController < ApplicationController
       diary.update(diary_params)
       diary.update(:genre_id => params[:genre][:genre_id])
     end
+  end
+  
+  def show
+    @diary = Diary.find(params[:id])
   end
   
   private
