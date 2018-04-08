@@ -8,7 +8,7 @@
     <p>感想    :<%= simple_format(diary.impression) %></p>
     <p>ジャンル:<%= diary.genre.genre_name %></p>
     <p>投稿者  :<%= diary.user.nickname %></p>
-    <p>詳細　  :</p>
+  　<%= link_to '詳細', "/diaries/#{diary.id}", method: :get %>
     <% if user_signed_in? && current_user.id == diary.user_id %>
     　<%= link_to '編集', "/diaries/#{diary.id}/edit", method: :get %>
       <%= link_to '削除', "/diaries/#{diary.id}", method: :delete %>

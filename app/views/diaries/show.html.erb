@@ -1,15 +1,24 @@
 <div class="contents row" >
   <p>タイトル:<%= @diary.title %></p>
   <p>著者名  :<%= @diary.author %></p>
+  <p>出版社  :<%= @diary.publisher %></p>
   <p>お薦め度:<%= @diary.reco_rate %></p>
+  <p>ジャンル:<%= @diary.genre.genre_name %></p>
+  <p>投稿者  :<%= @diary.user.nickname %></p>
+  <p>投稿日  :<%= @diary.created_at %></p>
+  <p>本の画像</p>
+  <p>本の感想:</p>
+  <p><%= simple_format(@diary.impression) %></p>
+  <p>本を読んで覚えておきたいこと:</p>
+  <p><%= simple_format(@diary.memo) %></p>
+  <p>本を読んでやろうと思うこと:</p>
+  <p><%= simple_format(@diary.action) %></p>
+  <p>本をお薦めしたい人:</p>
+  <p><%= simple_format(@diary.reco_for) %></p>
   <p>読みたい:</p>
   <p>買いたい:</p>
-  <p>感想    :<%= simple_format(@diary.impression) %></p>
-  <p>ジャンル:</p>
-  <p>投稿者  :<%= @diary.user.nickname %></p>
-  <p>詳細　  :</p>
-  <% if user_signed_in? && current_user.id == diary.user_id %>
-  　<%= link_to '編集', "/diaries/#{diary.id}/edit", method: :get %>
-    <%= link_to '削除', "/diaries/#{diary.id}", method: :delete %>
+  <% if user_signed_in? && current_user.id == @diary.user_id %>
+    <%= link_to '編集', "/diaries/#{@diary.id}/edit", method: :get %>
+    <%= link_to '削除', "/diaries/#{@diary.id}", method: :delete %>
   <% end %>
 </div>
