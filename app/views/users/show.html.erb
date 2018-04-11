@@ -1,6 +1,7 @@
 <div class="contents row">
   <p><%= @nickname %>さんの読書日記一覧</p>
   <% @diaries.each do |diary| %>
+    <p><%= image_tag diary.book_image.url(:thumb)%></p>
     <p>タイトル:<%= diary.title %></p>
     <p>著者名  :<%= diary.author %></p>
     <p>お薦め度:<%= diary.reco_rate %></p>

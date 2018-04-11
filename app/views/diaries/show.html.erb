@@ -6,7 +6,7 @@
   <p>ジャンル:<%= @diary.genre.genre_name %></p>
   <p>投稿者  :<%= @diary.user.nickname %></p>
   <p>投稿日  :<%= @diary.created_at %></p>
-  <p>本の画像</p>
+  <p><%= image_tag @diary.book_image.url(:thumb) %></p>
   <p>本の感想:</p>
   <p><%= simple_format(@diary.impression) %></p>
   <p>本を読んで覚えておきたいこと:</p>

@@ -1,5 +1,5 @@
 <div class="contents row">
-  <%= form_tag('/diaries', method: :post) do %>
+  <%= form_tag('/diaries', method: :post, :multipart => true) do %>
     <h3>
       投稿する
     </h3>
@@ -10,7 +10,7 @@
     <input type="text" name="reco_rate" placeholder="お薦め度"></br>
     <input type="radio" name="public_flag">公開する
     <input type="radio" name="public_flag">公開しない</br>
-    本の表紙画像アップロード<input type="file" name="book_image" placeholder="本の表示画像アップロード">
+    本の表紙画像アップロード<input type="file" name="book_image"></br>
     <input type="checkbox" name="book_image_public_flag"></br>
     本の感想<input type="checkbox" name="impression_public_flag"></br>
     <textarea name="impression" rows="10" cols="80"></textarea></br>
@@ -21,5 +21,6 @@
     どんな人にお薦めしていですか？<input type="checkbox" name="reco_for_public_flag"></br>
     <textarea name="reco_for" rows="10" cols="80"></textarea></br>
     <input type="submit" value="投稿する">
-  <% end %>  
+  <% end %>
+  
 </div>

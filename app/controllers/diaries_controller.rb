@@ -41,7 +41,7 @@ class DiariesController < ApplicationController
   
   private
   def diary_params
-      params.permit(:title, :author, :publisher, :public_flag, :impression, :impression_public_flag, :memo, :memo_public_flag, :action, :action_public_flag, :reco_for, :reco_for_public_flag).merge(genre_id: params[:genre][:genre_id], user_id: current_user.id)
+      params.permit(:title, :author, :publisher, :public_flag, :book_image, :impression, :impression_public_flag, :memo, :memo_public_flag, :action, :action_public_flag, :reco_for, :reco_for_public_flag).merge(genre_id: params[:genre][:genre_id], user_id: current_user.id)
   end
   
   def move_to_index

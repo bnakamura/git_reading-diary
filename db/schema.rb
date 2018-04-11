@@ -11,27 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180402055630) do
+ActiveRecord::Schema.define(version: 20180408140749) do
 
   create_table "diaries", force: :cascade do |t|
-    t.string   "title",                  limit: 255
-    t.string   "author",                 limit: 255
-    t.string   "publisher",              limit: 255
-    t.integer  "reco_rate",              limit: 4
-    t.integer  "genre_id",               limit: 4
-    t.integer  "user_id",                limit: 4
+    t.string   "title",                   limit: 255
+    t.string   "author",                  limit: 255
+    t.string   "publisher",               limit: 255
+    t.integer  "reco_rate",               limit: 4
+    t.integer  "genre_id",                limit: 4
+    t.integer  "user_id",                 limit: 4
     t.datetime "posted_datetime"
     t.boolean  "public_flag"
-    t.text     "impression",             limit: 65535
+    t.text     "impression",              limit: 65535
     t.boolean  "impression_public_flag"
-    t.text     "memo",                   limit: 65535
+    t.text     "memo",                    limit: 65535
     t.boolean  "memo_public_flag"
-    t.text     "action",                 limit: 65535
+    t.text     "action",                  limit: 65535
     t.boolean  "action_public_flag"
-    t.text     "reco_for",               limit: 65535
+    t.text     "reco_for",                limit: 65535
     t.boolean  "reco_for_public_flag"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "book_image_file_name",    limit: 255
+    t.string   "book_image_content_type", limit: 255
+    t.integer  "book_image_file_size",    limit: 4
+    t.datetime "book_image_updated_at"
   end
 
   create_table "genres", force: :cascade do |t|
