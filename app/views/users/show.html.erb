@@ -7,7 +7,11 @@
     <p>読みたい:</p>
     <p>買いたい:</p>
     <p>感想    :<%= simple_format(diary.impression) %></p>
-    <p>ジャンル:</p>
+    <% if diary.genre_id.blank? %>
+      <p>ジャンル:</p>
+    <% else %>
+      <p>ジャンル:<%= diary.genre.genre_name %></p>
+    <% end %>
     <p>投稿者  :</p>
     <p>詳細　  :</p>
   <% end %>
