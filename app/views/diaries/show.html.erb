@@ -3,7 +3,11 @@
   <p>著者名  :<%= @diary.author %></p>
   <p>出版社  :<%= @diary.publisher %></p>
   <p>お薦め度:<%= @diary.reco_rate %></p>
-  <p>ジャンル:<%= @diary.genre.genre_name %></p>
+  <% if @diary.genre_id.blank? %>
+    <p>ジャンル:</p>
+  <% else %>
+    <p>ジャンル:<%= @diary.genre.genre_name %></p>
+  <% end %>
   <p>投稿者  :<%= @diary.user.nickname %></p>
   <p>投稿日  :<%= @diary.created_at %></p>
   <p><%= image_tag @diary.book_image.url(:thumb) %></p>
